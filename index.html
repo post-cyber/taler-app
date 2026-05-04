@@ -589,6 +589,7 @@ catch(e) { state = DEFAULT_STATE; }
 if(!state.rewards) state.rewards = DEFAULT_STATE.rewards;
 const PREV_DEFAULTS = { 10: 'Hario V60-02 tragt (3-4 kopper)' };
 Object.keys(DEFAULT_STATE.rewards).forEach(k => { if(!state.rewards[k] || state.rewards[k] === PREV_DEFAULTS[k]) state.rewards[k] = DEFAULT_STATE.rewards[k]; });
+save();
 
 let pendingAction = null;
 let editingRewardPts = null;
