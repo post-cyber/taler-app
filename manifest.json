@@ -4,8 +4,8 @@
   "description": "Spor dine fremskridt som taler",
   "start_url": "/taler-app/",
   "display": "standalone",
-  "background_color": "#0f0f0f",
-  "theme_color": "#0f0f0f",
+  "background_color": "#f8f5f0",
+  "theme_color": "#f8f5f0",
   "icons": [
     {
       "src": "icon.svg",
