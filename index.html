@@ -586,9 +586,7 @@ const DEFAULT_STATE = {
 let state;
 try { state = JSON.parse(localStorage.getItem('taler_state')) || DEFAULT_STATE; }
 catch(e) { state = DEFAULT_STATE; }
-if(!state.rewards) state.rewards = DEFAULT_STATE.rewards;
-const PREV_DEFAULTS = { 10: 'Hario V60-02 tragt (3-4 kopper)' };
-Object.keys(DEFAULT_STATE.rewards).forEach(k => { if(!state.rewards[k] || state.rewards[k] === PREV_DEFAULTS[k]) state.rewards[k] = DEFAULT_STATE.rewards[k]; });
+state.rewards = {...DEFAULT_STATE.rewards};
 save();
 
 let pendingAction = null;
@@ -714,7 +712,7 @@ function saveReward() {
 }
 
 function resetAll() {
-  state = { score:0, log:[], rewards:{10:'',30:'CAP 0.5 — Evergoods',100:''} };
+  state = { score:0, log:[], rewards:{...DEFAULT_STATE.rewards} };
   save(); render();
 }
 
