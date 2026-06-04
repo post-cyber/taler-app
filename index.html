@@ -586,7 +586,7 @@ const DEFAULT_STATE = {
 let state;
 try { state = JSON.parse(localStorage.getItem('taler_state')) || DEFAULT_STATE; }
 catch(e) { state = DEFAULT_STATE; }
-state.rewards = {...DEFAULT_STATE.rewards};
+if (!state.rewards) state.rewards = {...DEFAULT_STATE.rewards};
 save();
 
 let pendingAction = null;
